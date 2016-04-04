@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/getFlag.js" charset="UTF-8" lang="javascript"></script>
+    <link href="css/getFlag.css" type="text/css" rel="stylesheet" />
+</head>
+<body onload="getInfo();">
+    <div class="mainDiv">
+        <input type="number" id="mobileNumber" value="00966937635678" /><br />
+        <input type="button" value="Get" onclick="getInfo();"/><br />
+        <img src="#" id="flag" /><br />
+        <span id="countryName">xcv</span><br />
+        <span id="countryIso2"></span><br />
+        <span id="countryDialCode"></span><br />
+        <span id="numberNoPrefix"></span><br />
+    </div>
+    <script>
+        function getInfo() {
+            var number = document.getElementById("mobileNumber").value;
+            document.getElementById("flag").src = "img/" + getCountryFlag(number);
+            document.getElementById("countryName").innerHTML = getCountryName(number);
+            document.getElementById("countryIso2").innerHTML = getCountryIso2(number);
+            document.getElementById("countryDialCode").innerHTML = getCountryDialCode(number);
+            document.getElementById("numberNoPrefix").innerHTML = getNumberWithoutPrefix(number);
+        }
+    </script>
+</body>
+</html>
